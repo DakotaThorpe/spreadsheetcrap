@@ -22,10 +22,13 @@ int main()
     char line[1024];
     while (fgets(line, 1024, stream))
     {
-        char* tmp = strdup(line);
-        printf("FName %s\n", getfield(tmp, 1));
-        tmp = strdup(line);
-        printf("LName %s\n", getfield(tmp, 2));
+        char* tmp[32];
+        for(int i=0; i<32; i++)
+        {
+            tmp[i] = strdup(line);
+            printf("%s\t", getfield(tmp[i], i));
+        }
+        printf("\n");
         // NOTE strtok clobbers tmp
         free(tmp);
     }
