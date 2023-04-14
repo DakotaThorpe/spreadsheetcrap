@@ -17,7 +17,7 @@ const char* getfield(char* line, int num)
 
 int main()
 {
-    FILE* stream = fopen("input", "r");
+    FILE* stream = fopen("dat", "r");
 
     char line[1024];
     while (fgets(line, 1024, stream))
